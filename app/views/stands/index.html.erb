@@ -1,4 +1,6 @@
-<h1>Time to Take a Stand</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stands</h1>
 
 <table>
   <thead>
@@ -15,8 +17,13 @@
         <td><%= stand.title %></td>
         <td><%= stand.user.email %></td>
         <td><%= link_to 'Show', stand %></td>
+        <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
+        <td><%= link_to 'Destroy', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<br>
+
+<%= link_to 'New Stand', new_stand_path %>

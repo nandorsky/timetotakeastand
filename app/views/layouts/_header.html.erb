@@ -4,6 +4,7 @@
         <% if current_user.provider == "facebook" %>
         	<li>Logged in with Facebook</li>
         <% end %>
+          <li><%= link_to 'New Stand', new_stand_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
