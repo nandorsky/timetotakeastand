@@ -1,5 +1,5 @@
 class StandsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :upvote]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /stands
@@ -12,6 +12,12 @@ class StandsController < ApplicationController
   # GET /stands/1.json
   def show
     @stand = Stand.find(params[:id])
+  end
+
+  def upvote
+    @stand = Stand.find(params[:id])
+    @stand.upvote_by current_user
+    redirect_to root_path
   end
 
   # GET /stands/new

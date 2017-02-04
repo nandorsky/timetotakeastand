@@ -5,6 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Submitted By</th>
+      <th>Likes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,10 @@
       <tr>
         <td><%= stand.title %></td>
         <td><%= stand.user.email %></td>
+        <td>
+        	<%= link_to 'Like'.html_safe, like_stand_path(stand), method: :put %>
+            <%= stand.score %>
+        </td>
         <td><%= link_to 'Show', stand %></td>
       </tr>
     <% end %>
