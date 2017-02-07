@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
 <h1>Listing Stands</h1>
+<%= link_to 'New Stand', new_stand_path, :class => "btn", :style => "float:right;" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Submitted By</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stands.each do |stand| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= stand.title %></td>
-        <td><%= stand.user.email %></td>
-        <td><%= link_to 'Show', stand %></td>
-        <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
-        <td><%= link_to 'Destroy', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Submitted By</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @stands.each do |stand| %>
+        <tr>
+          <td><%= stand.title %></td>
+          <td><%= stand.user.email %></td>
+          <td><%= link_to 'View', stand %></td>
+          <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
+          <td><%= link_to 'Delete', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Stand', new_stand_path %>
+  <br>
+
+</div>
+</div>
+</div>

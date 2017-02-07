@@ -32,7 +32,7 @@
                         <ul class="nav navbar-nav navbar-left">
                             <li><%= link_to "Home", root_path %></li>
                                 <% if user_signed_in? %>
-                                      <li><%= link_to 'New Stand', new_stand_path %></li>
+                                      <li><%= link_to 'Stands', stands_path %></li>
                                       <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
                                     <% else %>
                                       <li><%= link_to "Sign in", new_user_session_path %></li>
