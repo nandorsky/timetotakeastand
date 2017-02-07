@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204171219) do
+ActiveRecord::Schema.define(version: 20170207115735) do
 
   create_table "stands", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
+    t.text     "description"
+    t.string   "url"
+    t.string   "time"
+    t.string   "action"
+    t.string   "type_of_stand"
   end
 
   add_index "stands", ["user_id"], name: "index_stands_on_user_id"

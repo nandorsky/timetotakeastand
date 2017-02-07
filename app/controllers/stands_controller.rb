@@ -1,6 +1,6 @@
 class StandsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :upvote]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  #before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /stands
   # GET /stands.json
@@ -27,6 +27,7 @@ class StandsController < ApplicationController
 
   # GET /stands/1/edit
   def edit
+    @stand = Stand.find(params[:id])
   end
 
   def create
@@ -39,6 +40,7 @@ class StandsController < ApplicationController
   end
 
   def update
+    @stand = Stand.find(params[:id])
     if @stand.update(stand_params)
       redirect_to @stand, notice: 'Stand was successfully updated.'
     else
@@ -61,6 +63,6 @@ class StandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stand_params
-      params.require(:stand).permit(:title)
+      params.require(:stand).permit(:title, :description, :time, :url, :action, :type_of_stand)
     end
 end

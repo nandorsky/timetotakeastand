@@ -4,6 +4,26 @@
   <strong>Title:</strong>
   <%= @stand.title %>
 </p>
+<p>
+  <strong>Description:</strong>
+  <%= @stand.description %>
+</p>
+<p>
+  <strong>URL:</strong>
+  <%= @stand.url %>
+</p>
+<p>
+  <strong>Type of Action:</strong>
+  <%= @stand.type_of_stand %>
+</p>
+<p>
+  <strong>Time:</strong>
+  <%= @stand.time %>
+</p>
+<p>
+  <strong>Action:</strong>
+  <%= @stand.action %>
+</p>
 
 <%= link_to 'Edit', edit_stand_path(@stand) %> |
 <%= link_to 'Back', stands_path %>

@@ -6,4 +6,7 @@ class Stand < ActiveRecord::Base
   	self.get_upvotes.size 
   end
 
+  def types_of_stands
+  end
+
 end
