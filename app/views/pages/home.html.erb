@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    <h1 class="intro-title">Welcome to <span>timetotakeastand</span></h1>
+                    <h1 class="intro-title">How much <span>time do you have?</span></h1>
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
                 </div>
             </div>
@@ -53,22 +53,28 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#dosomething">
-            <i class="intro-icon fa fa-hand-peace-o" aria-hidden="true"></i> 
-              Do Something
+            <i class="intro-icon fa fa-clock-o" aria-hidden="true"></i> 
+              2 Minutes
           </a>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a class="btn-donate intro-icon-text" data-toggle="tab" href="#saysomething">
-            <i class="intro-icon fa fa-bullhorn" aria-hidden="true"></i> 
-              Say Something
+            <i class="intro-icon fa fa-hourglass" aria-hidden="true"></i> 
+              1 Hour
           </a>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#givesomething">
-            <i class="intro-icon fa fa-gift" aria-hidden="true"></i> 
-              Give Something
+            <i class="intro-icon fa fa-sun-o" aria-hidden="true"></i> 
+              1 day
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#givesomething">
+            <i class="intro-icon fa fa-calendar" aria-hidden="true"></i> 
+              Multiple Days
           </a>
         </div>
 
@@ -112,7 +118,7 @@
         <!-- Do Something Start -->
             <div id="dosomething" class="row  tab-pane fade in">
                 <div class="col-sm-12">
-                    <h2 class="section-title">Do Something<i class="fa fa-hand-peace-o"></i></h2>
+                    <h2 class="section-title">2 Minutes<i class="fa fa-clock-o"></i></h2>
                 </div>
               <% @do_something.each do |stand| %>
                 <div class="col-sm-3 recent-cause-list">
