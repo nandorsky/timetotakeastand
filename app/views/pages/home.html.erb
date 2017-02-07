@@ -10,7 +10,7 @@
                         <div class="col-sm-6">
                             <h2>It's Time to Take a Stand</h2>
                             <p>Contrary to popular belief, rorem is not simply random text. Contrary to popular belief, rorem is not simply random text.</p>
-                            <a class="btn btn-red" href="#">Donet NOW</a>
+                            <a class="btn btn-red" href="#">LEARN MORE</a>
                         </div>
                     </div>
                 </div>
@@ -45,41 +45,47 @@
 
     <div class="container">
       <div class="row">
+
         <div class="col-sm-4">
-          <a class="btn-donate intro-icon-text" href="donation.html">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#dosomething">
             <i class="intro-icon fa fa-hand-peace-o" aria-hidden="true"></i> 
               Do Something
           </a>
         </div>
         <div class="col-sm-4">
-          <a class="btn-donate intro-icon-text" href="donation.html">
+          <a class="btn-donate intro-icon-text" data-toggle="tab" href="#saysomething">
             <i class="intro-icon fa fa-bullhorn" aria-hidden="true"></i> 
               Say Something
           </a>
         </div>
         <div class="col-sm-4">
-          <a class="btn-donate intro-icon-text" href="donation.html">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#givesomething">
             <i class="intro-icon fa fa-gift" aria-hidden="true"></i> 
               Give Something
           </a>
         </div>
+
       </div>
     </div>
 
-<!-- Recent Cause -->
-    <div class="recent-cause pd-top-80 pd-bottom-50">
+
+
+<!-- Stands -->
+    <div class="recent-cause pd-top-80 pd-bottom-50" style="min-height:600px;">
         <div class="container">
-            <div class="row">
+          <div class="tab-content">
+
+          <!-- Say Something Start -->
+            <div class="row tab-pane fade in" id="saysomething">
                 <div class="col-sm-12">
                     <h2 class="section-title">Say Something<i class="fa fa-bullhorn"></i></h2>
                 </div>
-
               <% @say_something.each do |stand| %>
                 <div class="col-sm-3 recent-cause-list">
                     <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
                     <div class="recent-cause-summary">
                         <div class="recent-cause-content">
-                            <h3 class="recent-cause-title"><a href="#"><%= stand.title %></a></h3>
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
                             <div class="cause-location">
                               <i class="fa fa-clock-o" aria-hidden="true"></i> 
                               <%= stand.time %><br>
@@ -88,67 +94,76 @@
                               <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
                               642 people have liked this stand<br>
                             </div>
-                            <a class="btn mg-top-40">Learn More</a>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+            <!-- Say Something End -->
+
+        <!-- Do Something Start -->
+            <div id="dosomething" class="row  tab-pane fade in">
+                <div class="col-sm-12">
+                    <h2 class="section-title">Do Something<i class="fa fa-hand-peace-o"></i></h2>
+                </div>
+              <% @do_something.each do |stand| %>
+                <div class="col-sm-3 recent-cause-list">
+                    <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
+                    <div class="recent-cause-summary">
+                        <div class="recent-cause-content">
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
+                            <div class="cause-location">
+                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                              <%= stand.time %><br>
+                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
+                              342 people have completed this stand <br>
+                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
+                              642 people have liked this stand<br>
+                            </div>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
                         </div>
                     </div>
                 </div>
               <% end %>
 
             </div>
+  <!-- Do Something End -->
+
+    <!-- Give Something Start -->
+            <div id="givesomething" class="row tab-pane fade in">
+                <div class="col-sm-12">
+                    <h2 class="section-title">Give Something<i class="fa fa-gift"></i></h2>
+                </div>
+              <% @give_something.each do |stand| %>
+                <div class="col-sm-3 recent-cause-list">
+                    <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
+                    <div class="recent-cause-summary">
+                        <div class="recent-cause-content">
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
+                            <div class="cause-location">
+                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                              <%= stand.time %><br>
+                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
+                              342 people have completed this stand <br>
+                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
+                              642 people have liked this stand<br>
+                            </div>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+  <!-- Give Something End -->
+
+
         </div>
+      </div>
     </div>
+  
 
 
-<h1>Time to Take a Stand</h1>
-<h2>Do Something</h2> <br>
-<h2>Say Something</h2> <br>
-<h2>Give Something</h2> 
-
-  <tbody>
-    <% @do_something.each do |stand| %>
-      <tr>
-        <td><%= stand.title %></td>
-        <td><%= stand.type_of_stand %></td>
-        <td>
-          <%= link_to 'Like'.html_safe, like_stand_path(stand), method: :put %>
-            <%= stand.score %>
-        </td>
-        <td><%= link_to 'Show', stand %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<hr>
-  <tbody>
-    <% @say_something.each do |stand| %>
-      <tr>
-        <td><%= link_to stand.title, stand %></td>
-        <td><%= stand.type_of_stand %></td>
-        <td>
-          <%= link_to 'Like'.html_safe, like_stand_path(stand), method: :put %>
-            <%= stand.score %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<hr>
-  <tbody>
-    <% @give_something.each do |stand| %>
-      <tr>
-        <td><%= stand.title %></td>
-        <td><%= stand.type_of_stand %></td>
-        <td>
-          <%= link_to 'Like'.html_safe, like_stand_path(stand), method: :put %>
-            <%= stand.score %>
-        </td>
-        <td><%= link_to 'Show', stand %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
 
