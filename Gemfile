@@ -17,6 +17,8 @@ gem 'devise'
 
 gem 'omniauth-facebook'
 
+gem "font-awesome-rails"
+
 gem 'acts_as_votable', '~> 0.10.0'
 
 # Use jquery as the JavaScript library
