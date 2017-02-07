@@ -1,41 +1,50 @@
-<%= form_for(@stand) do |f| %>
-  <% if @stand.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@stand.errors.count, "error") %> prohibited this stand from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
 
-      <ul>
-      <% @stand.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <%= form_for(@stand) do |f| %>
+        <% if @stand.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@stand.errors.count, "error") %> prohibited this stand from being saved:</h2>
+
+            <ul>
+            <% @stand.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <%= f.label :url %><br>
+          <%= f.text_field :url %>
+        </div>
+        <div class="field">
+          <%= f.label :time %><br>
+          <%= f.select :time, ['2 Minutes', '1 Hour', '1 Day', 'Multiple Days'] %>
+        </div>
+        <div class="field">
+          <%= f.label :type_of_stand %><br>
+          <%= f.select :type_of_stand, ['Do Something', 'Say Something', 'Give Something'] %>
+        </div>
+        <div class="field">
+          <%= f.label :action %><br>
+          <%= f.text_field :action %>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.text_field :time %>
-  </div>
-  <div class="field">
-    <%= f.label :action %><br>
-    <%= f.text_field :action %>
-  </div>
-  <div class="field">
-    <%= f.label :type_of_stand %><br>
-    <%= f.select :type_of_stand, ['Do Something', 'Say Something', 'Give Something'] %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

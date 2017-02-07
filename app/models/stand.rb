@@ -6,7 +6,8 @@ class Stand < ActiveRecord::Base
   	self.get_upvotes.size 
   end
 
-  def types_of_stands
+  def length_of_time
+  	['2 Minutes', '1 Hour', '1 Day', 'Multiple Days']
   end
 
 end

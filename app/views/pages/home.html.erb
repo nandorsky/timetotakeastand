@@ -54,25 +54,25 @@
       <div class="row">
 
         <div class="col-sm-3">
-          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#dosomething">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#twominutes">
             <i class="intro-icon fa fa-clock-o" aria-hidden="true"></i> 
               2 Minutes
           </a>
         </div>
         <div class="col-sm-3">
-          <a class="btn-donate intro-icon-text" data-toggle="tab" href="#saysomething">
+          <a class="btn-donate intro-icon-text" data-toggle="tab" href="#onehour">
             <i class="intro-icon fa fa-hourglass" aria-hidden="true"></i> 
               1 Hour
           </a>
         </div>
         <div class="col-sm-3">
-          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#givesomething">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#oneday">
             <i class="intro-icon fa fa-sun-o" aria-hidden="true"></i> 
               1 day
           </a>
         </div>
         <div class="col-sm-3">
-          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#givesomething">
+          <a class="btn-donate intro-icon-text"  data-toggle="tab" href="#multipledays">
             <i class="intro-icon fa fa-calendar" aria-hidden="true"></i> 
               Multiple Days
           </a>
@@ -88,39 +88,12 @@
         <div class="container">
           <div class="tab-content">
 
-          <!-- Say Something Start -->
-            <div class="row tab-pane fade in" id="saysomething">
-                <div class="col-sm-12">
-                    <h2 class="section-title">Say Something<i class="fa fa-bullhorn"></i></h2>
-                </div>
-              <% @say_something.each do |stand| %>
-                <div class="col-sm-3 recent-cause-list">
-                    <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
-                    <div class="recent-cause-summary">
-                        <div class="recent-cause-content">
-                            <h3 class="recent-cause-title"><%= stand.title %></h3>
-                            <div class="cause-location">
-                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
-                              <%= stand.time %><br>
-                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
-                              342 people have completed this stand <br>
-                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
-                              642 people have liked this stand<br>
-                            </div>
-                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
-                        </div>
-                    </div>
-                </div>
-              <% end %>
-            </div>
-            <!-- Say Something End -->
-
-        <!-- Do Something Start -->
-            <div id="dosomething" class="row  tab-pane fade in">
+   <!-- 2 Minutes Start -->
+            <div id="twominutes" class="row  tab-pane fade in">
                 <div class="col-sm-12">
                     <h2 class="section-title">2 Minutes<i class="fa fa-clock-o"></i></h2>
                 </div>
-              <% @do_something.each do |stand| %>
+              <% @two_minutes.each do |stand| %>
                 <div class="col-sm-3 recent-cause-list">
                     <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
                     <div class="recent-cause-summary">
@@ -141,14 +114,14 @@
               <% end %>
 
             </div>
-  <!-- Do Something End -->
+      <!-- 2 Minutes End -->
 
-    <!-- Give Something Start -->
-            <div id="givesomething" class="row tab-pane fade in">
+          <!-- 1 Hour -->
+            <div class="row tab-pane fade in" id="onehour">
                 <div class="col-sm-12">
-                    <h2 class="section-title">Give Something<i class="fa fa-gift"></i></h2>
+                    <h2 class="section-title">1 Hour<i class="fa fa-hourglass"></i></h2>
                 </div>
-              <% @give_something.each do |stand| %>
+              <% @one_hour.each do |stand| %>
                 <div class="col-sm-3 recent-cause-list">
                     <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
                     <div class="recent-cause-summary">
@@ -168,7 +141,63 @@
                 </div>
               <% end %>
             </div>
-  <!-- Give Something End -->
+            <!-- 1 Hour End -->
+
+       
+
+    <!-- One Day Start -->
+            <div id="oneday" class="row tab-pane fade in">
+                <div class="col-sm-12">
+                    <h2 class="section-title">1 Day<i class="fa fa-sun-o"></i></h2>
+                </div>
+              <% @one_day.each do |stand| %>
+                <div class="col-sm-3 recent-cause-list">
+                    <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
+                    <div class="recent-cause-summary">
+                        <div class="recent-cause-content">
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
+                            <div class="cause-location">
+                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                              <%= stand.time %><br>
+                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
+                              342 people have completed this stand <br>
+                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
+                              642 people have liked this stand<br>
+                            </div>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+  <!-- One Day End -->
+
+   <!-- Multiple Days Start -->
+            <div id="multipledays" class="row tab-pane fade in">
+                <div class="col-sm-12">
+                    <h2 class="section-title">Multiple Days<i class="fa fa-calendar"></i></h2>
+                </div>
+              <% @multiple_days.each do |stand| %>
+                <div class="col-sm-3 recent-cause-list">
+                    <img alt="cause" src="http://lineartheme.com/themes/becharity/images/causes/9.jpg">
+                    <div class="recent-cause-summary">
+                        <div class="recent-cause-content">
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
+                            <div class="cause-location">
+                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                              <%= stand.time %><br>
+                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
+                              342 people have completed this stand <br>
+                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
+                              642 people have liked this stand<br>
+                            </div>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+  <!-- Multiple Days End -->
 
 
         </div>

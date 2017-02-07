@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
   def home
   	@stands = Stand.all
-  	@do_something = Stand.where(type_of_stand: "Do Something")
-  	@say_something = Stand.where(type_of_stand: "Say Something")
-  	@give_something = Stand.where(type_of_stand: "Give Something")
+  	@two_minutes = Stand.where(time: "2 Minutes")
+  	@one_hour = Stand.where(time: "1 Hour")
+  	@one_day = Stand.where(time: "1 Day")
+  	@multiple_days = Stand.where(time: "Multiple Days")
   end
 end
