@@ -249,6 +249,10 @@ input[type=text] {
     color: #fff;
 }
 
+.complete {
+    background-color: #ff3450;
+}
+
 /* ==================================================================
   3.0 Header Styles
 ================================================================== */
@@ -1955,6 +1959,7 @@ ul.feature-list {
     margin-bottom: 50px;
     overflow: hidden;
 }
+
 .blog-single .thumb img {
     height: auto;
     width: 100%;
@@ -2035,6 +2040,13 @@ ul.feature-list {
     padding-left: 10px;
     padding-top: 5px;
 }
+
+.stand-info {
+    background: #fff;
+    overflow: hidden;
+    padding: 30px;
+}
+
 
 /* ==================================================================
   28.0 Blog Page
