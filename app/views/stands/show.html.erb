@@ -4,8 +4,7 @@
             <div class="row">
                 <div class="col-sm-4 col-md-3" id="cause-sticky">
                     <div class="sidebar-left">
-                        <a class="btn-donate" href="donation.html">view stand</a>
-                        <a class="btn-donate complete" href="donation.html">complete stand</a>
+                        <a class="btn-donate" href="#" data-toggle="modal" data-target="#stand"onclick="window.open('<%= @stand.url %>'); return true;">view website</a>
                         <div class="widget widget-recent">
                                 <h3 class="recent-title">Recent Stands</h3>
                                 <ul>
@@ -36,39 +35,14 @@
                         <div class="col-md-12">
                             <div class="cause-details">
                                 <div class="row stand-info">
-                                    <div class="col-sm-6 col-md-8">
-                                        <div class="meta-list">
-                                            <span><a href="#"><i class="fa fa-qrcode"></i>BC25843</a></span>
-                                            <span><a href="#"><i class="fa fa-globe"></i>iNicaragua</a></span>
-                                        </div>
-                                        <div class="tag">
-                                            <i class="fa fa-tags"></i><a href="#">Children</a>, <a href="#">Sports</a>, <a href="#">Cancer</a>, <a href="#">Food</a>
-                                        </div>
-                                        <div class="catagory">
-                                            <i class="fa fa-folder-open" aria-hidden="true"></i> <a href="#">Cancer</a>, <a href="#">Food</a>
-                                        </div>
-                                        <div class="cause-summary">
-                                            <h3 style="">Stand Summary</h3>
-                                            <p><%= @stand.description %></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="fund">
-                                            <div class="fund-top">
-                                                <h3>352 people</h3>
-                                                <h5 class="fund-title">have completed this stand</h5>
-                                            </div>
-                                            <div class="fund-bottom">                                                
-                                                <h3>1,052 people</h3>
-                                                <h5 class="fund-title">haved liked this stand</h5>
-                                                <div class="fund-progress">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="cause-goal">
+                                          <div class="meta-list">
+                                            <span><a href="#"><i class="fa fa-qrcode"></i>BC25843</a></span>
+                                            <span><a href="#"><i class="fa fa-globe"></i>iNicaragua</a></span>
+                                        </div>
                                             <h3>Title</h3>
                                             <p><%= @stand.title %></p>
                                                 <p>
@@ -113,44 +87,22 @@
                                           <div class="blog-reply mg-bottom-100">
                                               <form class="contact-form" action="#" method="POST">
                                                   <label class="contact-title" for="message">Comment</label>
-                                                  <textarea id="message" class="input-message" name="message" rows="7" cols="30" placeholder="Type message here........."></textarea>
-                                                  <input class="btn" type="submit" value="I COMPLETED THIS ACTION">
+                                                  <textarea id="message" class="input-message" name="message" rows="7" cols="30" placeholder="Type comment here..."></textarea>
+                                                  <input class="btn" type="submit" value="I COMPLETED THIS STAND">
                                               </form>
                                           </div>
-                                          <h3 class="comment-header">3 COMMENTS</h3>
+                                          <h3 class="comment-header">3 PEOPLE HAVE COMPLETED THIS STAND</h3>
                                           <div class="media">
                                               <div class="media-left">
-                                                  <img src="images/reviewer/2.jpg" alt="image">
+                                                  <img src="https://scontent.fphl1-1.fna.fbcdn.net/v/t1.0-9/13932819_10206480194463356_6944928735406978454_n.jpg?oh=33b5466651a92f539720d230056570c2&oe=593A21A4" alt="image">
                                               </div>
                                               <div class="media-body">
                                                   <span class="comment-title">Name</span>
                                                   <span class="comment-date"><i class="fa fa-calendar-o"></i>21 January, 2016 at 10:00am</span>
                                                   <p>Donec rutrum Donec rutrum hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet. hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet.</p>
-                                                  <a href="#"><i class="fa fa-reply"></i> Reply</a>
                                               </div>
                                           </div>
-                                          <div class="media">
-                                              <div class="media-left">
-                                                  <img src="images/reviewer/3.jpg" alt="image">
-                                              </div>
-                                              <div class="media-body">
-                                                  <span class="comment-title">Client Name</span>
-                                                  <span class="comment-date"><i class="fa fa-calendar-o"></i>21 January, 2016 at 10:00am</span>
-                                                  <p>Donec rutrum hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet.</p>
-                                                  <a href="#"><i class="fa fa-reply"></i> Reply</a>
-                                              </div>
-                                          </div>
-                                          <div class="media">
-                                              <div class="media-left">
-                                                  <img src="images/reviewer/4.jpg" alt="image">
-                                              </div>
-                                              <div class="media-body">
-                                                  <span class="comment-title">Client Name</span>
-                                                  <span class="comment-date"><i class="fa fa-calendar-o"></i>21 January, 2016 at 10:00am</span>
-                                                  <p>Donec rutrum hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet.</p>
-                                                  <a href="#"><i class="fa fa-reply"></i> Reply</a>
-                                              </div>
-                                          </div>
+
                                       </div>
                                     </div>
                                 </div>
@@ -176,3 +128,22 @@
             </div>
         </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="stand" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Did you complete the stand?</h4>
+      </div>
+      <div class="modal-body">
+        Join the other 4,323 people that have completed a stand.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary text-center">Complete this Stand</button>
+      </div>
+    </div>
+  </div>
+</div>
