@@ -17,7 +17,9 @@ gem 'devise'
 
 gem 'omniauth-facebook'
 
-gem "font-awesome-rails"
+gem 'paperclip', '~> 4.2'
+
+gem 'font-awesome-rails'
 
 gem 'acts_as_votable', '~> 0.10.0'
 

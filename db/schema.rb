@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207115735) do
+ActiveRecord::Schema.define(version: 20170215112541) do
 
   create_table "stands", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
     t.text     "description"
     t.string   "url"
     t.string   "time"
     t.string   "action"
     t.string   "type_of_stand"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "stands", ["user_id"], name: "index_stands_on_user_id"
