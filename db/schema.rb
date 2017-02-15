@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215112541) do
+ActiveRecord::Schema.define(version: 20170215113717) do
+
+  create_table "completes", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "stand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "completes", ["stand_id"], name: "index_completes_on_stand_id"
 
   create_table "stands", force: :cascade do |t|
     t.string   "title"

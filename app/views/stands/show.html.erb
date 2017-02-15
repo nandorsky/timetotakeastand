@@ -84,6 +84,25 @@
                                         <hr>
                           
                                         <div class="blog-comment">
+                                          <h2>Add a comment:</h2>
+                                              <%= form_for([@stand, @stand.completes.build]) do |f| %>
+                                                <p>
+                                                  <%= f.label :comment %><br>
+                                                  <%= f.text_area :comment %>
+                                                </p>
+                                                <p>
+                                                  <%= f.submit %>
+                                                </p>
+                                              <% end %>
+
+                                              <% @stand.completes.each do |complete| %>
+                                                  <p>
+                                                    <strong>Commenter:</strong>
+                                                    <%= complete.comment %>
+                                                  </p>
+
+                                                <% end %>
+                                                                                        
                                           <h3 class="comment-header">COMPLETE THE STAND</h3>
                                           <div class="blog-reply mg-bottom-100">
                                               <form class="contact-form" action="#" method="POST">
