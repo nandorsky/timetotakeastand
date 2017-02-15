@@ -1,137 +1,90 @@
+
+  <!-- Page title -->
+    <div class="page-title-section" style="background-image: url('images/page-title/2.jpg');">
+        <div class="page-title-wrap">
+            <div class="page-title-overlay"></div>
+            <div class="page-title-info">                
+                <h1 class="page-title"><%= @stand.title %></h1>
+            </div>
+        </div>
+    </div>
+
     <!-- blog start -->
-    <div class="single-blog-section pd-top-100 pd-bottom-100">
+    <div class="cause-details-section pd-top-100 mg-bottom-100">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-3" id="cause-sticky">
                     <div class="sidebar-left">
                         <a class="btn-donate" href="#" data-toggle="modal" data-target="#stand"onclick="window.open('<%= @stand.url %>'); return true;">view website</a>
-                        <div class="widget widget-recent">
-                                <h3 class="recent-title">Recent Stands</h3>
-                                <ul>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="#"><img src="images/blog/4.jpg" alt="blog"></a>
-                                        </div>
-                                        <a href="#">Donec rutrum hendrerit pretium sed eu semper purus.</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="#"><img src="images/blog/5.jpg" alt="blog"></a>
-                                        </div>
-                                        <a href="#">Making it over 2000 years old.</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="#"><img src="images/blog/6.jpg" alt="blog"></a>
-                                        </div>
-                                        <a href="#">Nunc ullamcorper porta mauris at aliquet.</a>
-                                    </li>
-                                </ul>
+                        <div class="cause-leader hidden-xs">
+                            <h3>About the Org</h3>
+                            <div class="thumb">
+                               <%= image_tag @stand.image.url(:medium) %>
                             </div>
+                            <p>Contrary to popular belief, is not simply random text. It has roots in a piece of classical, from a passage, and going through the cites of the word in classical literature,</p>
+                            <span class="cause-mail"><i class="fa fa-envelope-o"></i>info@becharity.com</span>
+                            <div class="social">
+                                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                                <a href="#"><i class="fa fa-twitter-square"></i></a>
+                                <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-9">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="cause-details">
-                                <div class="row stand-info">
-
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="cause-goal">
-                                          <div class="meta-list">
-                                            <span><a href="#"><i class="fa fa-qrcode"></i>BC25843</a></span>
-                                            <span><a href="#"><i class="fa fa-globe"></i>iNicaragua</a></span>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="tag">
+                                            <i class="fa fa-clock-o"></i><%= @stand.time %> to complete this stand<br>
+                                            <i class="fa fa-bullhorn"></i>Say Something
                                         </div>
-                                            <h3>Title</h3>
-                                            <%= image_tag @stand.image.url(:medium) %>
-                                            <p><%= @stand.title %></p>
-                                                <p>
-                                                  <strong>URL:</strong>
-                                                  <%= @stand.url %>
-                                                </p>
-                                                <p>
-                                                  <strong>Type of Action:</strong>
-                                                  <%= @stand.type_of_stand %>
-                                                </p>
-                                                <p>
-                                                  <strong>Time:</strong>
-                                                  <%= @stand.time %>
-                                                </p>
-                                                <p>
-                                                  <strong>Action:</strong>
-                                                  <%= @stand.action %>
-                                                </p>
-
-                                                <%= link_to 'Edit', edit_stand_path(@stand) %> |
-                                                <%= link_to 'Back', stands_path %>
-                                                <!-- Page title --></p>
+                                        <div class="cause-summary">
+                                            <h3 style="">Stand Summary</h3>
+                                            <p>Contrary to popular belief, is not simply random text. It has roots in a piece of classical, from a passage, and going through the cites of the word in classical literature, discovered the ource of "de Finibus Bonorum et " (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, " dolor sit amet..", comes from a line in section 1.10.32.</p>
                                         </div>
-                                        <div class="cause-feature">
-                                            <h3>Challenge</h3>
-                                            <ul class="feature-list">
-                                                <li><i class="fa fa-user"></i> Contrary to popular belief,</li>
-                                                <li><i class="fa fa-cog"></i>Latin literature from 45 BC, making it over 2000 years old. Contrary to belief</li>
-                                                <li><i class="fa fa-bookmark"></i>Editors now use as their default model text, and a search for will uncover many web sites still in their infancy.</li>
-                                                <li><i class="fa fa-map-marker"></i>Model text, and a search for will uncover many web sites still in their infancy.</li>
-                                                <li><i class="fa fa-thumbs-o-up"></i>Many web sites still in their infancy</li>
-                                            </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="fund">
+                                            <div class="fund-top">
+                                                <h3>2,321</h3>
+                                                <h5 class="fund-title"><i class="fa fa-thumbs-up" aria-hidden="true"></i>people have liked this stand</h5>
+                                            </div>
+                                            <div class="fund-bottom">
+                                                <h3>321</h3>
+                                                <h5 class="fund-title"> <i class="fa fa-check-circle" aria-hidden="true"></i>people have completed this stand</h5>
+                                            </div>
                                         </div>
-                                        <div class="cause-solution">
-                                            <h3>Solution</h3>
-                                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Contrary to popular belief. is not simply random text. It has roots in a piece45 BC, making it over 2000 years old. Contrary to popular belief.</p>
-                                        </div>
-                                        <hr>
-                          
-                                        <div class="blog-comment">
-                                          <h2>Add a comment:</h2>
-                                              <%= form_for([@stand, @stand.completes.build]) do |f| %>
-                                                <p>
-                                                  <%= f.label :comment %><br>
-                                                  <%= f.text_area :comment %>
-                                                </p>
-                                                <p>
-                                                  <%= f.submit %>
-                                                </p>
-                                              <% end %>
-
-                                              <% @stand.completes.each do |complete| %>
-                                                  <p>
-                                                    <strong>Commenter:</strong>
-                                                    <%= complete.comment %>
-                                                  </p>
-
-                                                <% end %>
-                                                                                        
-                                          <h3 class="comment-header">COMPLETE THE STAND</h3>
-                                          <div class="blog-reply mg-bottom-100">
-                                              <form class="contact-form" action="#" method="POST">
-                                                  <label class="contact-title" for="message">Comment</label>
-                                                  <textarea id="message" class="input-message" name="message" rows="7" cols="30" placeholder="Type comment here..."></textarea>
-                                                  <input class="btn" type="submit" value="I COMPLETED THIS STAND">
-                                              </form>
-                                          </div>
-                                          <h3 class="comment-header">3 PEOPLE HAVE COMPLETED THIS STAND</h3>
-                                          <div class="media">
-                                              <div class="media-left">
-                                                  <img src="https://scontent.fphl1-1.fna.fbcdn.net/v/t1.0-9/13932819_10206480194463356_6944928735406978454_n.jpg?oh=33b5466651a92f539720d230056570c2&oe=593A21A4" alt="image">
-                                              </div>
-                                              <div class="media-body">
-                                                  <span class="comment-title">Name</span>
-                                                  <span class="comment-date"><i class="fa fa-calendar-o"></i>21 January, 2016 at 10:00am</span>
-                                                  <p>Donec rutrum Donec rutrum hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet. hendrerit pretium. Sed eu semper purus. Nunc ullamcorper porta mauris at aliquet.</p>
-                                              </div>
-                                          </div>
-
-                                      </div>
                                     </div>
                                 </div>
                             </div>
+                            <h3 class="comment-header">COMPLETE THE STAND</h3>
+                            <div class="blog-reply">
+                              <%= render 'join' %>
+                            </div>
+                            <div class="blog-comment">
+                            <h3 class="comment-header"><%#= @stand.count %> COMMENTS</h3>
+                            <% @stand.completes.each do |complete| %>
+                             <div class="media">
+                                <div class="media-left">
+                                      <img src="<%= complete.user.image if complete.comment %>" alt="image" class="img-circle" />
+                                </div>
+                                <div class="media-body">
+                                    <span class="comment-title"><%= complete.user.name if complete.comment %></span>
+                                    <span class="comment-date"><i class="fa fa-clock-o"></i><%= complete.created_at %></span>
+                                    <p>"<%= complete.comment %>"</p>
+                                </div>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     
@@ -141,9 +94,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>Have an idea for a stand we can add?</h2>
-                    <p>Click below and fill out the form to request a stand to be added to the site.</p>
-                    <a class="btn btn-red mg-top-30" href="">Add a Stand</a>
+                    <h2>Do you have an idea for a stand?</h2>
+                    <p>Submit your idea below.</p>
+                    <a class="btn btn-red mg-top-30" href="">Submit Idea</a>
                 </div>
             </div>
         </div>
@@ -161,8 +114,7 @@
         Join the other 4,323 people that have completed a stand.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary text-center">Complete this Stand</button>
+         <%= render 'join' %>
       </div>
     </div>
   </div>

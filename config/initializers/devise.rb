@@ -15,7 +15,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   #facebook app
-  config.omniauth :facebook, "255613298183876", "484991492430af948b5ca4076fcbc841"
+  config.omniauth :facebook, "255613298183876", "484991492430af948b5ca4076fcbc841", :image_size => 'large'
 
   #config.omniauth :facebook, "255613298183876", "484991492430af948b5ca4076fcbc841",
    #               callback_url: "http://localhost:3000//users/auth/facebook/callback"

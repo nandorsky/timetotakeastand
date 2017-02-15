@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215113717) do
+ActiveRecord::Schema.define(version: 20170215214716) do
 
   create_table "completes", force: :cascade do |t|
     t.text     "comment"
     t.integer  "stand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "completes", ["stand_id"], name: "index_completes_on_stand_id"
+  add_index "completes", ["user_id"], name: "index_completes_on_user_id"
 
   create_table "stands", force: :cascade do |t|
     t.string   "title"
@@ -55,6 +57,8 @@ ActiveRecord::Schema.define(version: 20170215113717) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "name"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,0 +1,9 @@
+<%= form_for([@stand, @stand.completes.build], :html => {:class => "contact-form"}) do |f| %>
+    <%= f.label :comment, :class => "contact-title" %><br>
+    <%= f.text_area :comment,  :required => true, :class => "input-message" %>
+    <% if user_signed_in? %>
+    <%= f.submit "I Completed this Stand", :class => "btn", data: { disable_with: "Submitting..." } %>
+    <% else %>
+    <%= link_to "Join to Complete this Stand", new_user_session_path, :class => "btn" %> 
+    <% end %>
+<% end %>

@@ -2,16 +2,13 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  
+
   resources :stands do
     resources :completes
+     member do
+      put "like", to: "stands#upvote"
+    end
   end
-
-  #resources :stands do
-    # member do
-   #   put "like", to: "stands#upvote"
-  #  end
-  #end
 
   root "pages#home"
 
