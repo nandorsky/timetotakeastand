@@ -69,10 +69,16 @@
                             </div>
                             <div class="blog-comment">
                             <h3 class="comment-header"><%#= @stand.count %> COMMENTS</h3>
+                            
                             <% @stand.completes.each do |complete| %>
+                                <% if !complete.comment.blank? %>
                              <div class="media">
                                 <div class="media-left">
-                                      <img src="<%= complete.user.image if complete.comment %>" alt="image" class="img-circle" />
+                                    <%# if !complete.user.image.blank?  %>
+                                        <img src="<%= complete.user.image if complete.comment %>" alt="image" class="img-circle" />
+                                    <%# else %>
+                                       
+                                    <%# end %>
                                 </div>
                                 <div class="media-body">
                                     <span class="comment-title"><%= complete.user.name if complete.comment %></span>
@@ -80,6 +86,7 @@
                                     <p>"<%= complete.comment %>"</p>
                                 </div>
                             </div>
+                            <% end %>
                             <% end %>
                         </div>
                     </div>

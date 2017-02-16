@@ -54,9 +54,7 @@
                         <%= f.text_field :action, :class => "input"  %>
                         
                         <%= f.label :image, :class =>"contact-title" %>
-                        <div class="col-md-12">
-                          <%= image_tag @stand.image.url, :width => "200px", :style => "margin-bottom:20px;" %>
-                        </div>
+
                         <%= f.file_field :image, :class => "input"  %>
 
                         <%= f.submit :class => "btn" %>
