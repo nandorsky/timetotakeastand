@@ -3,7 +3,7 @@
         <div class="page-title-wrap">
             <div class="page-title-overlay"></div>
             <div class="page-title-info">
-                <h1 class="page-title">Signup Page</h1>
+                <h1 class="page-title">Join Page</h1>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 contact-main">
-                    <h3 class="form-title">Signup form</h3>
+                    <h3 class="form-title">Join</h3>
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "registar-form"}) do |f| %>
                             <%= f.label :name %>
                             <%= f.text_field :name, :class => "input" %>
@@ -28,9 +28,11 @@
                           <div class="actions">
                             <%= f.submit "Sign Up", :class => "btn" %>
                           </div>
+                          <hr>
+                           <%= link_to '<i class="fa fa-facebook"></i>  Join with Facebook'.html_safe, user_facebook_omniauth_authorize_path,:class => "btn", :style => "width:100%; font-size:18px; padding:20px;" %>
                            <%= render "devise/shared/links" %>
                         <% end -%>
-                         <p class="rform-title">You are not a member! <a href="register.html">Register</a> here.</p>
+                        
                 </div>
             </div>
         </div>

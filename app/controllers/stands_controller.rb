@@ -16,8 +16,8 @@ class StandsController < ApplicationController
 
   def upvote
     @stand = Stand.find(params[:id])
-    @stand.upvote_by current_user
-    redirect_to root_path
+    @stand.upvote_by current_or_guest_user
+    redirect_to @stand
   end
 
   # GET /stands/new
@@ -33,7 +33,7 @@ class StandsController < ApplicationController
   def create
     @stand = current_user.stands.build(stand_params)
     if @stand.save
-      redirect_to @stand, notice: 'Stand was successfully created.'
+      redirect_to @stand, notice: 'Stand was successfully created!'
     else
       render :new
     end

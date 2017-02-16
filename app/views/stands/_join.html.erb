@@ -1,10 +1,11 @@
 <%= form_for([@stand, @stand.completes.build], :html => {:class => "contact-form"}) do |f| %>
     <h3 class="comment-header text-center">Join the <%= @stand.completes.count %> other people who have completed the stand</h3>
+    <% if user_signed_in? %>
     <%= f.label :comment, :class => "contact-title" %><br>
     <%= f.text_area :comment,  :required => true, :class => "input-message", :placeholder => "Leave a comment here..." %>
-    <% if user_signed_in? %>
     <%= f.submit "Complete this Stand", :class => "btn", data: { disable_with: "Submitting..." } %>
     <% else %>
-    <%= link_to "Join to Complete this Stand", new_user_registration_path, :class => "btn" %> 
+    
+    <%= link_to "Join to Complete this Stand", new_user_registration_path, :class => "btn", :style => "width:100%; font-size:18px;" %> 
     <% end %>
 <% end %>

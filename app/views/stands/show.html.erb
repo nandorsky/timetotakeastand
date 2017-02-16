@@ -41,7 +41,7 @@
                                         <div class="tag">
                                             <%= link_to '<i class="fa fa-thumbs-up"></i>Like this Stand'.html_safe, like_stand_path(@stand), :class => "btn", :style => "color:#fff;", method: :put %><br><br>
                                             <i class="fa fa-clock-o"></i><%= @stand.time %> to complete this stand<br>
-                                            <i class="fa fa-bullhorn"></i>Say Something*
+                                            <!--<i class="fa fa-bullhorn"></i>Say Something*-->
 
                                         </div>
                                         <div class="cause-summary">
@@ -119,7 +119,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Complete the Stand</h4>
+        
       </div>
       <div class="modal-body">
         <%= render 'join' %>
