@@ -83,8 +83,8 @@
                                 </div>
                                 <div class="media-body">
                                     <span class="comment-title"><%= complete.user.name if complete.comment %></span>
-                                    <span class="comment-date"><i class="fa fa-clock-o"></i><%= time_ago_in_words(complete.created_at) %> ago</span>
-                                    <p>"<%= complete.comment %>"</p>
+                                    <span class="comment-date"><i class="fa fa-clock-o"></i>Completed this stand <%= time_ago_in_words(complete.created_at) %> ago</span>
+                                    <p><%= '"' + complete.comment + '"' %></p>
                                 </div>
                             </div>
                             <% end %>
