@@ -1,0 +1,7 @@
+<% if @stand.status == "draft" %>
+	<div class="col-md-12">
+		<div class="alert alert-warning">
+  			This stand is currently in draft mode and is not publicly visible on the site. <%= link_to 'Click here', edit_stand_path(@stand) %> to edit this stand.
+		</div>
+	</div>
+<% end %>

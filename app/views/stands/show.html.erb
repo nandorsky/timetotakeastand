@@ -13,6 +13,7 @@
     <div class="cause-details-section pd-top-100 mg-bottom-100">
         <div class="container">
             <div class="row">
+                <%= render 'alert' %>
                 <div class="col-sm-4 col-md-3" id="cause-sticky">
                     <div class="sidebar-left">
                         <a class="btn-donate" href="#" data-toggle="modal" data-target="#stand"onclick="window.open('<%= @stand.url %>'); return true;">view website</a>
@@ -55,7 +56,7 @@
                                                 <h5 class="fund-title"> <i class="fa fa-thumbs-up" aria-hidden="true"></i>people have liked this stand</h5>
                                             </div>
                                             <div class="fund-bottom">
-                                                <h3>321</h3>
+                                                <h3><%= @stand.completes.count %> </h3>
                                                 <h5 class="fund-title"> <i class="fa fa-check-circle" aria-hidden="true"></i>people have completed this stand</h5>
                                             </div>
                                         </div>
@@ -63,26 +64,26 @@
                                 </div>
                             </div>
                             <hr>
-                            <h3 class="comment-header">COMPLETE THE STAND</h3>
+
                             <div class="blog-reply">
                               <%= render 'join' %>
                             </div>
                             <div class="blog-comment">
-                            <h3 class="comment-header"><%#= @stand.count %> COMMENTS</h3>
+                            <h3 class="comment-header"><%= @stand.completes.count %> COMMENTS</h3>
                             
-                            <% @stand.completes.each do |complete| %>
+                            <% @stand.completes.reverse_each do |complete| %>
                                 <% if !complete.comment.blank? %>
                              <div class="media">
                                 <div class="media-left">
-                                    <%# if !complete.user.image.blank?  %>
+                                    <% if !complete.user.image.blank?  %>
                                         <img src="<%= complete.user.image if complete.comment %>" alt="image" class="img-circle" />
-                                    <%# else %>
-                                       
-                                    <%# end %>
+                                    <% else %>
+                                        <%= image_tag ("avatar.jpg"), :class => "img-circle" %>
+                                    <% end %>
                                 </div>
                                 <div class="media-body">
                                     <span class="comment-title"><%= complete.user.name if complete.comment %></span>
-                                    <span class="comment-date"><i class="fa fa-clock-o"></i><%= complete.created_at %></span>
+                                    <span class="comment-date"><i class="fa fa-clock-o"></i><%= time_ago_in_words(complete.created_at) %> ago</span>
                                     <p>"<%= complete.comment %>"</p>
                                 </div>
                             </div>
@@ -106,7 +107,7 @@
                 <div class="col-sm-12">
                     <h2>Do you have an idea for a stand?</h2>
                     <p>Submit your idea below.</p>
-                    <a class="btn btn-red mg-top-30" href="">Submit Idea</a>
+                    <a class="btn btn-red mg-top-30" href="">Submit an Idea</a>
                 </div>
             </div>
         </div>
@@ -118,13 +119,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Did you complete the stand?</h4>
+        <h4 class="modal-title" id="myModalLabel">Complete the Stand</h4>
       </div>
       <div class="modal-body">
-        Join the other 4,323 people that have completed a stand.
+        <%= render 'join' %>
       </div>
       <div class="modal-footer">
-         <%= render 'join' %>
+        
       </div>
     </div>
   </div>
