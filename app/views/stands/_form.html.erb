@@ -1,55 +1,69 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-
-      <%= form_for(@stand) do |f| %>
-        <% if @stand.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@stand.errors.count, "error") %> prohibited this stand from being saved:</h2>
-
-            <ul>
-            <% @stand.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div class="field">
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
+ <!-- Page title -->
+    <div class="page-title-section">
+        <div class="page-title-wrap">
+            <div class="page-title-overlay"></div>
+            <div class="page-title-info">
+                <h1 class="page-title">Add a New Stand</h1>
+            </div>
         </div>
-        <div class="field">
-          <%= f.label :description %><br>
-          <%= f.text_area :description %>
-        </div>
-        <div class="field">
-          <%= f.label :url %><br>
-          <%= f.text_field :url %>
-        </div>
-        <div class="field">
-          <%= f.label :time %><br>
-          <%= f.select :time, ['2 Minutes', '1 Hour', '1 Day', 'Multiple Days'] %>
-        </div>
-        <div class="field">
-          <%= f.label :type_of_stand %><br>
-          <%= f.select :type_of_stand, ['Do Something', 'Say Something', 'Give Something'] %>
-        </div>
-        <div class="field">
-          <%= f.label :action %><br>
-          <%= f.text_field :action %>
-        </div>
-        <div class="form-group">
-          <%= f.label :image %>
-          <%= f.file_field :image, class: "form-control" %>
-        </div>
-
-        
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-      <% end %>
-
     </div>
-  </div>
-</div>
+    
+    <!-- contact-section start -->
+    <div class="contact-section pd-top-100 pd-bottom-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 contact-main mg-bottom-50">
+                    <h3 class="form-title">Add a New Stand</h3>
+                    <%= form_for(@stand, :html => {:class => "contact-form"}) do |f| %>
+                      <% if @stand.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@stand.errors.count, "error") %> prohibited this stand from being saved:</h2>
+
+                          <ul>
+                          <% @stand.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                        <%= f.label :status, :class =>"contact-title" %><br>
+                        <%= f.select :status, ['active', 'draft'], :class => "input"  %><br>
+
+                        <%= f.label :title,"Name of the Stand", :class =>"contact-title" %>
+                        <%= f.text_field :title, :class => "input" %>
+
+                        <%= f.label :description, "Description of the Stand", :class =>"contact-title" %>
+                        <%= f.text_area :description, :class => "input-message"  %>
+
+                        <%= f.label :org_name, "Name of the Organization", :class =>"contact-title" %>
+                        <%= f.text_field :org_name, :class => "input"  %>
+
+                        <%= f.label :org_description, "Description of the Organization", :class =>"contact-title" %>
+                        <%= f.text_area :org_description, :class => "input-message"  %>
+
+                        <%= f.label :url, "URL", :class =>"contact-title" %>
+                        <%= f.text_field :url, :class => "input"  %>
+
+                        <%= f.label :time, "Time to Complete Stand",:class =>"contact-title" %><br>
+                        <%= f.select :time, ['2 Minutes', '1 Hour', '1 Day', 'Multiple Days'] %><br>
+
+                        <%= f.label :type_of_stand,"Type of Stand", :class =>"contact-title" %><br>
+                        <%= f.select :type_of_stand, ['Do Something', 'Say Something', 'Give Something'], :class => "input"  %><br>
+ 
+                        <%= f.label :action, "Action Type", :class =>"contact-title" %>
+                        <%= f.text_field :action, :class => "input"  %>
+                        
+                        <%= f.label :image, :class =>"contact-title" %>
+                        <div class="col-md-12">
+                          <%= image_tag @stand.image.url, :width => "200px", :style => "margin-bottom:20px;" %>
+                        </div>
+                        <%= f.file_field :image, :class => "input"  %>
+
+                        <%= f.submit :class => "btn" %>
+
+                    <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>

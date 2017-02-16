@@ -1,35 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-<div class="row">
-  <div class="col-md-12">
-<h1>Listing Stands</h1>
-<%= link_to 'New Stand', new_stand_path, :class => "btn", :style => "float:right;" %>
+ <!-- Page title -->
+    <div class="page-title-section">
+        <div class="page-title-wrap">
+            <div class="page-title-overlay"></div>
+            <div class="page-title-info">
+                <h1 class="page-title">Add a New Stand</h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-- contact-section start -->
+    <div class="faq-main mg-top-100 mg-bottom-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 contact-main mg-bottom-50">
+                  <%= link_to 'Add Stand', new_stand_path, :class => "btn", :style => "float:right;" %>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Submitted By</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Submitted By</th>
+                          <th>Status</th>                          
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
 
-    <tbody>
-      <% @stands.each do |stand| %>
-        <tr>
-          <td><%= stand.title %></td>
-          <td><%= stand.user.email %></td>
-          <td><%= link_to 'View', stand %></td>
-          <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
-          <td><%= link_to 'Delete', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+                      <tbody>
+                        <% @stands.each do |stand| %>
+                          <tr>
+                            <td><%= stand.title %></td>
+                            <td><%= stand.user.email %></td>
+                            <td><%= stand.status %></td>
+                            <td><%= link_to 'View', stand %></td>
+                            <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
+                            <td><%= link_to 'Delete', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  <br>
-
-</div>
-</div>
-</div>

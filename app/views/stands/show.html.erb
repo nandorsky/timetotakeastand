@@ -17,17 +17,17 @@
                     <div class="sidebar-left">
                         <a class="btn-donate" href="#" data-toggle="modal" data-target="#stand"onclick="window.open('<%= @stand.url %>'); return true;">view website</a>
                         <div class="cause-leader hidden-xs">
-                            <h3>About the Org</h3>
+                            <h3>About <%= @stand.org_name %></h3>
                             <div class="thumb">
                                <%= image_tag @stand.image.url(:medium) %>
                             </div>
-                            <p>Contrary to popular belief, is not simply random text. It has roots in a piece of classical, from a passage, and going through the cites of the word in classical literature,</p>
-                            <span class="cause-mail"><i class="fa fa-envelope-o"></i>info@becharity.com</span>
+                            <p><%= @stand.org_description %></p>
+                            <!--<span class="cause-mail"><i class="fa fa-envelope-o"></i>info@becharity.com</span>
                             <div class="social">
                                 <a href="#"><i class="fa fa-facebook-square"></i></a>
                                 <a href="#"><i class="fa fa-twitter-square"></i></a>
                                 <a href="#"><i class="fa fa-google-plus-square"></i></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -38,8 +38,10 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-8">
                                         <div class="tag">
+                                            <%= link_to '<i class="fa fa-thumbs-up"></i>Like this Stand'.html_safe, like_stand_path(@stand), :class => "btn", :style => "color:#fff;", method: :put %><br><br>
                                             <i class="fa fa-clock-o"></i><%= @stand.time %> to complete this stand<br>
-                                            <i class="fa fa-bullhorn"></i>Say Something
+                                            <i class="fa fa-bullhorn"></i>Say Something*
+
                                         </div>
                                         <div class="cause-summary">
                                             <h3 style="">Stand Summary</h3>
@@ -49,8 +51,8 @@
                                     <div class="col-sm-6 col-md-4">
                                         <div class="fund">
                                             <div class="fund-top">
-                                                <h3>2,321</h3>
-                                                <h5 class="fund-title"><i class="fa fa-thumbs-up" aria-hidden="true"></i>people have liked this stand</h5>
+                                                <h3><%= @stand.score %> </h3>
+                                                <h5 class="fund-title"> <i class="fa fa-thumbs-up" aria-hidden="true"></i>people have liked this stand</h5>
                                             </div>
                                             <div class="fund-bottom">
                                                 <h3>321</h3>
@@ -60,6 +62,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr>
                             <h3 class="comment-header">COMPLETE THE STAND</h3>
                             <div class="blog-reply">
                               <%= render 'join' %>
