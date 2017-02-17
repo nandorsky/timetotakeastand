@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             <h2 class="text-center intro">It's Time to Take a Stand</h2>
                             <h3 class="text-center supporting-text">Contrary to popular belief, rorem is not simply <br>random text. Contrary to popular belief, rorem is not simply random text.</p>
-                            <a class="btn btn-red" href="#">LEARN MORE</a>
+                            <!--<a class="btn btn-red" href="#">LEARN MORE</a>-->
                         </div>
                     </div>
                 </div>
@@ -92,6 +92,34 @@
     <div class="recent-cause pd-top-80 pd-bottom-50" style="min-height:600px;">
         <div class="container">
           <div class="tab-content">
+
+               <!-- All Start -->
+            <div class="row tab-pane fade in active">
+                <div class="col-sm-12">
+                    <h2 class="section-title">Stands<i class="fa fa-bullhorn"></i></h2>
+                </div>
+              <% @stands.each do |stand| %>
+                <div class="col-sm-3 recent-cause-list">
+                    <%= image_tag stand.image.url(:medium) %>
+                    <div class="recent-cause-summary">
+                        <div class="recent-cause-content">
+                            <h3 class="recent-cause-title"><%= stand.title %></h3>
+                            <div class="cause-location">
+                              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                              <%= stand.time %><br>
+                               <i class="fa fa-check-circle" aria-hidden="true"></i> 
+                              <%= stand.completes.count %> people have completed this stand <br>
+                              <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, like_stand_path(stand), method: :put %>
+                             <%= stand.score %> people have liked this stand<br>
+                            </div>
+                            <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+
+            </div>
+      <!-- All End -->
 
    <!-- 2 Minutes Start -->
             <div id="twominutes" class="row  tab-pane fade in">
