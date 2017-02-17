@@ -219,6 +219,7 @@ input[type=text] {
 .btn-red:hover {
     background: #2867de;
 }
+
 .btn-red-bg:hover {
     background: #fff;
     color: #FF3450;
@@ -399,6 +400,7 @@ input[type=text] {
 }
 .header .main-nav .navbar-left li a:hover {
     color: #ff3450;
+    font-size: 200px;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -445,14 +447,17 @@ input[type=text] {
 /*====== Top Cart ======*/
 
 .top-cart {
-    font-size: 24px;
+    font-size: 14px;
     line-height: 20px;
     padding: 28px 0;
     position: relative;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
+
+
 .top-cart i.fa {
-    color: #2867de;
+    color: #fff;
 }
 .navbar-default .navbar-nav > li.top-cart > a.top-amount {
     background: #ff3450;
