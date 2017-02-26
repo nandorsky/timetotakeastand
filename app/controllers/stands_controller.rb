@@ -51,6 +51,7 @@ class StandsController < ApplicationController
   # DELETE /stands/1
   # DELETE /stands/1.json
   def destroy
+    @stand = Stand.find(params[:id])
     @stand.destroy
     redirect_to stands_url
   end
