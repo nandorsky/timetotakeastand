@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :stands
-  has_many :completes
+  has_many :completes, dependent: :destroy
 
   acts_as_voter
 
