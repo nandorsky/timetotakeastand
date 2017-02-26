@@ -156,7 +156,7 @@
                     <h2 class="section-title">1 Hour<i class="fa fa-hourglass"></i></h2>
                 </div>
               <% @one_hour.each do |stand| %>
-                <div class="col-sm-3 recent-cause-list">
+                 <div class="col-sm-3 recent-cause-list">
                     <%#= image_tag stand.image.url(:medium) %>
                     <div class="recent-cause-summary">
                         <div class="recent-cause-content">
@@ -165,9 +165,9 @@
                               <i class="fa fa-clock-o" aria-hidden="true"></i> 
                               <%= stand.time %><br>
                                <i class="fa fa-check-circle" aria-hidden="true"></i> 
-                              342 people have completed this stand <br>
-                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
-                              642 people have liked this stand<br>
+                              <%= stand.completes.count %> people have completed this stand <br>
+                              <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, like_stand_path(stand), method: :put %>
+                             <%= stand.score %> people have liked this stand<br>
                             </div>
                             <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
                         </div>
@@ -194,9 +194,9 @@
                               <i class="fa fa-clock-o" aria-hidden="true"></i> 
                               <%= stand.time %><br>
                                <i class="fa fa-check-circle" aria-hidden="true"></i> 
-                              342 people have completed this stand <br>
-                              <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
-                              642 people have liked this stand<br>
+                              <%= stand.completes.count %> people have completed this stand <br>
+                              <%= link_to '<i class="fa fa-thumbs-up"></i>'.html_safe, like_stand_path(stand), method: :put %>
+                             <%= stand.score %> people have liked this stand<br>
                             </div>
                             <%= link_to "Learn More", stand, :class => "btn mg-top-40" %>
                         </div>
