@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-sm-12 contact-main mg-bottom-50">
                     <h3 class="form-title">Add a New Stand</h3>
-                    <%= form_for(@stand, :html => {:class => "contact-form"}) do |f| %>
+                    <%= form_for(@stand, multipart: true, :html => {:class => "contact-form"}) do |f| %>
                       <% if @stand.errors.any? %>
                         <div id="error_explanation">
                           <h2><%= pluralize(@stand.errors.count, "error") %> prohibited this stand from being saved:</h2>
