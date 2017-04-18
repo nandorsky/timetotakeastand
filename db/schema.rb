@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216140907) do
+ActiveRecord::Schema.define(version: 20170418224310) do
 
   create_table "completes", force: :cascade do |t|
     t.text     "comment"
@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 20170216140907) do
     t.string   "time"
     t.string   "action"
     t.string   "type_of_stand"
+    t.text     "org_description"
+    t.string   "org_name"
+    t.string   "status"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.text     "org_description"
-    t.string   "org_name"
-    t.string   "status"
   end
 
   add_index "stands", ["user_id"], name: "index_stands_on_user_id"
